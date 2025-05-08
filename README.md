@@ -1,6 +1,8 @@
-Hasil Figma_ui
-![Home Page](https://raw.githubusercontent.com/azharmlnf/flutter-ui/dev/figma_ui/assets/images/home.png)
-![Home Page](https://raw.githubusercontent.com/azharmlnf/flutter-ui/dev/figma_ui/assets/images/detail.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://raw.githubusercontent.com/azharmlnf/flutter-ui/dev/figma_ui/assets/images/home.png" width="48%" />
+  <img src="https://raw.githubusercontent.com/azharmlnf/flutter-ui/dev/figma_ui/assets/images/detail.png" width="48%" />
+</div>
+
 
 
 # Flutter UI
