@@ -4,10 +4,23 @@ import 'package:google_fonts/google_fonts.dart';
 import '../widgets/app_bar_home.dart';
 import '../widgets/bottom_navigation_bar_home.dart';
 import '../widgets/category_home.dart';
-import '../widgets/recommended_furniture_home.dart';
+import '../widgets/recommended_batik_home.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String _selectedCategory = 'All';
+
+  void _onCategorySelected(String category) {
+    setState(() {
+      _selectedCategory = category;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +45,12 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            const SizedBox(height: 40, child: CategoryHome()),
+            SizedBox(
+              height: 40,
+              child: CategoryHome(
+                onCategorySelected: _onCategorySelected,
+              ),
+            ),
             const SizedBox(height: 30),
             Text(
               "Recommended Kain Batik",
@@ -44,7 +62,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(child: RecommendedFurnituresHome()),
+            Expanded(
+              child: RecommendedBatiksHome(
+                category: _selectedCategory,
+              ),
+            ),
           ],
         ),
       ),

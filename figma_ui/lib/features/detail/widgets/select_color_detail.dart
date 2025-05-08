@@ -10,10 +10,10 @@ class SelectColorDetail extends StatefulWidget {
 
 class _SelectColorDetailState extends State<SelectColorDetail> {
   final List<Color> _colors = [
-    const Color(0xFF9A9390),
-    const Color(0xFFEEA427),
-    const Color(0xFFE3E3E3),
-    const Color(0xFF80450A),
+    const Color.fromARGB(255, 20, 19, 19),
+    const Color.fromARGB(255, 215, 151, 39),
+    const Color.fromARGB(255, 102, 100, 100),
+    const Color.fromARGB(255, 137, 70, 3),
   ];
 
   int _selectedColor = 0;

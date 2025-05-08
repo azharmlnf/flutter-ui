@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+
 import 'features/home/pages/home_page.dart';
-import 'features/detail/pages/detail_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Furniture Shop',
+      title: 'Batik Shop',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,9 +30,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 233, 91, 30)),
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF2F2F2), // Warna latar belakang
+        scaffoldBackgroundColor: const Color(
+          0xFFF2F2F2,
+        ), // Warna latar belakang
       ),
       home: const HomePage(),
       routes: {
@@ -111,9 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,

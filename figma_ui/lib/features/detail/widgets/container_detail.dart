@@ -6,7 +6,16 @@ import 'package:figma_ui/features/detail/widgets/select_color_detail.dart';
 import 'package:figma_ui/features/detail/widgets/select_quantity_detail.dart';
 
 class ContainerDetail extends StatelessWidget {
-  const ContainerDetail({super.key});
+  final String nama;
+  final int harga;
+  final double rating;
+
+  const ContainerDetail({
+    super.key,
+    required this.nama,
+    required this.harga,
+    required this.rating,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +43,11 @@ class ContainerDetail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const NamaProdukHargaDetail(),
+                NamaProdukHargaDetail(
+                  nama: nama,
+                  harga: harga,
+                  rating: rating,
+                ),
                 const SizedBox(height: 9),
                 const SelectColorDetail(),
                 const SizedBox(height: 19),
@@ -60,4 +73,4 @@ class ContainerDetail extends StatelessWidget {
       ),
     );
   }
-} 
+}

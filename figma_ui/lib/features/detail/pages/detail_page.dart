@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:figma_ui/features/detail/widgets/app_bar_detail.dart';
 import 'package:figma_ui/features/detail/widgets/container_detail.dart';
+import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  final Map<String, dynamic> batik;
+
+  const DetailPage({super.key, required this.batik});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,10 @@ class DetailPage extends StatelessWidget {
             left: 0,
             top: 0,
             child: Image.asset(
-              'assets/images/furniture/img_product_1.png', // Ganti dengan gambar yang sesuai
+              batik['image'],
               fit: BoxFit.contain,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.5,
             ),
           ),
           Positioned(
@@ -25,13 +29,17 @@ class DetailPage extends StatelessWidget {
               child: const AppBarDetail(),
             ),
           ),
-          const Positioned(
+          Positioned(
             left: 0,
             bottom: 0,
-            child: ContainerDetail(),
+            child: ContainerDetail(
+              nama: batik['nama'],
+              harga: batik['harga'],
+              rating: batik['rating'],
+            ),
           ),
         ],
       ),
     );
   }
-} 
+}

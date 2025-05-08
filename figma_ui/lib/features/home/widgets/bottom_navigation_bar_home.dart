@@ -18,10 +18,7 @@ class _BottomNavbarHomeState extends State<BottomNavbarHome> {
       "title": "Chart",
       "icon": "assets/icons/cart.svg",
     },
-    {
-      "title": "Favorites",
-      "icon": "assets/icons/favorite.svg",
-    },
+
     {
       "title": "Account",
       "icon": "assets/icons/profile.svg",
@@ -53,7 +50,7 @@ class _BottomNavbarHomeState extends State<BottomNavbarHome> {
               activeIcon: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 235, 102, 7),
+                  color: Color.fromARGB(255, 233, 91, 30),
                   borderRadius: BorderRadius.all(Radius.circular(14)),
                 ),
                 child: SvgPicture.asset(

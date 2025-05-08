@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoryHome extends StatefulWidget {
-  const CategoryHome({super.key});
+  const CategoryHome({
+    super.key,
+    required this.onCategorySelected,
+  });
+
+  final void Function(String) onCategorySelected;
 
   @override
   State<CategoryHome> createState() => _CategoryHomeState();
@@ -21,6 +26,8 @@ class _CategoryHomeState extends State<CategoryHome> {
     setState(() {
       _selectedCategory = index;
     });
+
+    widget.onCategorySelected(_category[index]);
   }
 
   @override
@@ -32,18 +39,19 @@ class _CategoryHomeState extends State<CategoryHome> {
         return Padding(
           padding: const EdgeInsets.only(right: 17),
           child: InkWell(
-              onTap: () => _onTapCategory(index),
-              child: _selectedCategory == index
-                  ? CategoryItem(
-                      category: _category[index],
-                      backgroundColor: const Color.fromARGB(255, 233, 91, 30),
-                      fontColor: const Color(0xFFFFFFFF),
-                    )
-                  : CategoryItem(
-                      category: _category[index],
-                      backgroundColor: Colors.transparent,
-                      fontColor: const Color(0xFF4A4543),
-                    )),
+            onTap: () => _onTapCategory(index),
+            child: _selectedCategory == index
+                ? CategoryItem(
+                    category: _category[index],
+                    backgroundColor: const Color.fromARGB(255, 233, 91, 30),
+                    fontColor: const Color(0xFFFFFFFF),
+                  )
+                : CategoryItem(
+                    category: _category[index],
+                    backgroundColor: Colors.transparent,
+                    fontColor: const Color(0xFF4A4543),
+                  ),
+          ),
         );
       },
     );
@@ -84,4 +92,4 @@ class CategoryItem extends StatelessWidget {
       ),
     );
   }
-} 
+}
