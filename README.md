@@ -1,3 +1,8 @@
+Hasil Figma_ui
+![Home Page](https://raw.githubusercontent.com/azharmlnf/flutter-ui/dev/figma_ui/assets/images/home.png)
+![Home Page](https://raw.githubusercontent.com/azharmlnf/flutter-ui/dev/figma_ui/assets/images/detail.png)
+
+
 # Flutter UI
 
 Materi Mata Kuliah Pemrograman Mobile | Teknik Informatika UNISNU Jepara | Akhmad Khanif Zyen
